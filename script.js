@@ -71,16 +71,6 @@ const resetGame = function () {
 btnCheck.addEventListener('click', checkInput);
 btnAgain.addEventListener('click', resetGame);
 
-
-
-
-const checkKey = function (e) {
-    if (e.key === 'Enter') checkInput();
-};
-
-inputGuess.addEventListener('focus', function () {
-    inputGuess.addEventListener('keydown', checkKey);
-});
-inputGuess.addEventListener('blur', function(){
-    inputGuess.removeEventListener('keydown', checkKey);
+inputGuess.addEventListener('keydown', (e)=>{
+    if(e.code === 'Enter') checkInput();
 });
